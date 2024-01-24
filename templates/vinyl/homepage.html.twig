@@ -6,20 +6,35 @@
 {% endblock %}
 
 {% block body %}
-	<h1>
-		{{ title }}</h1>
-	<div>
-		Derniers titres ajouter :
-		<ul>
-			{% for track in tracks %}
-				<li>
-					{{track.song |upper}}
-					-
-					{{track.artist }}
-				</li>
-			{% endfor %}
-		</ul>
-	</div>
-
-{% endblock %}
+	<section id="section-1" class="p-5">
+		<div class="d-flex  gap-5 align-items-center  text-light">
+			<img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="image accueil">
+			<div>
+				<p>Playlist</p>
+				<h1>
+					{{ title }}
+				</h1>
+				<div class="d-flex ">
+					<img src="#" alt="#" class="rounded">
+					{# <p>nom utilisateur</p> #}
+					{# nombre titre #} titres
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="section-2" class="text-light p-2">
+	<h2>Derniers titres ajouter : </h2>
+	</section>
+	<section id="section-3" class="text-light m-0">
+	<ul>
+		{% for track in tracks %}
+			<ol>
+				{{track.song |upper}}
+				-
+				{{track.artist |capitalize }}
+			</ol>
+		{% endfor %}
+	</ul>
+	</section>
+</div>{% endblock %}
 

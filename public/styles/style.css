@@ -1,0 +1,17 @@
+
+
+#section-1 {
+    background: rgb(4, 2, 40);
+    background: linear-gradient(322deg, rgba(4, 2, 40, 1) 0%, rgba(54, 38, 105, 1) 87%, rgba(80, 56, 160, 1) 90%);
+    color: white;
+}
+
+#section-2{
+    background: #1F1737;
+    color: white;
+}
+
+#section-3{
+    background: #141315;
+}
+
