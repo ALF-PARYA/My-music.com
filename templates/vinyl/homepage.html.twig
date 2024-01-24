@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	| Nos dernières musiques
+{% endblock %}
+
+{% block body %}
+	<h1>
+		{{ title }}</h1>
+	<div>
+		Derniers titres ajouter :
+		<ul>
+			{% for track in tracks %}
+				<li>
+					{{track.song |upper}}
+					-
+					{{track.artist }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+{% endblock %}
+
