@@ -1,40 +1,67 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{parent()}}
-	| Nos dernières musiques
+    {{ parent() }}
+    | Nos dernières musiques
 {% endblock %}
 
 {% block body %}
-	<section id="section-1" class="p-5">
-		<div class="d-flex  gap-5 align-items-center  text-light">
-			<img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="image accueil">
-			<div>
-				<p>Playlist</p>
-				<h1>
-					{{ title }}
-				</h1>
-				<div class="d-flex ">
-					<img src="#" alt="#" class="rounded">
-					{# <p>nom utilisateur</p> #}
-					{# nombre titre #} titres
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="section-2" class="text-light p-2">
-	<h2>Derniers titres ajouter : </h2>
-	</section>
-	<section id="section-3" class="text-light m-0">
-	<ul>
-		{% for track in tracks %}
-			<ol>
-				{{track.song |upper}}
-				-
-				{{track.artist |capitalize }}
-			</ol>
-		{% endfor %}
-	</ul>
-	</section>
-</div>{% endblock %}
+    <section id="section-1" class="p-5">
+        <div class="d-flex gap-5 align-items-center text-light">
+            <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="image accueil" class="rounded">
+            <div>
+                <p>Playlist</p>
+                <h1>{{ title }}</h1>
+                <div class="d-flex align-items-center">
+                    <img src="#" alt="#" class="rounded">
+                    {# <p>nom utilisateur</p> #}
+                    <p class="m-0">{{ totalTracks }} titres</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="section-2" class="text-light m-0 pt-3">
+        <div class="container text-start">
+            <div class="row">
+                <div class="col text-center">
+                    <p>#</p>
+                </div>
+                <div class="col-8 fw-bold">
+                    <p>Titre</p>
+                </div>
+                <div class="col-2 fw-bold">
+                    <p>Artiste</p>
+                </div>
+                <div class="col">
+                    <p>Date d'ajout</p>
+                </div>
+                <div class="col">
+                    <img src="{{ asset('media/icons/clock.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-start pb-2">
+            {% for key, track in tracks %}
+                <div class="row pb-2">
+                    <div class="col text-end">
+                        {{ key + 1 }}
+                    </div>
+                    <div class="col-8 fw-bold">
+                        {{ track.song | upper }}
+                    </div>
+                    <div class="col-2 fw-bold">
+                        {{ track.artist }}
+                    </div>
+                    <div class="col">
+                        {{ track.date | capitalize }}
+                    </div>
+                    <div class="col">
+                        {{ track.Duration }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

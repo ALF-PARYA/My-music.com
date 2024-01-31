@@ -19,18 +19,20 @@
 	</head>
 	<body>
 		{% block navbar %}
-			<nav class="navbar bg-body-tertiary bg-transparent text-body">
-				<div class="container-fluid">
-					<a class="navbar-brand">My-music</a>
+			<nav class="navbar   bg-dark text-white">
+				<div class="container-fluid ">
+					<div class=" d-flex align-items-center">
+						<a href="{{ path('app_homepage') }}"><img src="{{asset('media/icons/favicon-big-w.png')}}" alt="logo" class="rounded"></a>
+						<a class="navbar-brand fst-italic text-light " href="{{ path('app_homepage') }}">My-music</a>
+                        <a class="link-underline-dark text-white" href="{{path('addingpage')}}">Ajouter une musique</a>
+					</div>
 					<form class="d-flex" role="search">
 						<input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
 						<button class="btn btn-outline-success" type="submit">Rechercher</button>
 					</form>
 				</div>
-			</nav>
-
-		{% endblock %}
-		{% block body %}{% endblock %}
-	</body>
-</html>
+			</body>
+		</body>
+	</html>
+</nav>{% endblock %}{% block body %}{% endblock %}</body></html>
 

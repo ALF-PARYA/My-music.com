@@ -7,11 +7,11 @@
 }
 
 #section-2{
-    background: #1F1737;
+    background: #141315;
     color: white;
 }
 
-#section-3{
-    background: #141315;
-}
+#tracks-info :hover{
 
+    background: #2D2B33;
+}
